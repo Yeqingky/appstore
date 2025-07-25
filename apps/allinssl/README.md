@@ -10,7 +10,7 @@
 > 🚀 一站式SSL证书生命周期管理解决方案 | 支持Let's Encrypt、ZeroSSL、Google、SSL.COM、BuyPass等多家CA | 多平台部署 | 自动化运维
 
 <p align="center">
-  <img src=".github/img/main.gif" alt="控制台预览" width="600">
+  <img src="https://zy.emocc.cn/d/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98/image/main.gif" alt="控制台预览" width="600">
 </p>
 
 ## 📌 项目亮点
