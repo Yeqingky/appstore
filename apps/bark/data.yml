@@ -1,12 +1,12 @@
-name: Bark # 应用名称
+name: bark # 应用名称
 tags:
   - 工具 # 应用标签
 title: 一款注重隐私、安全可控的自定义通知推送工具 # 项目标题
 description: 一款注重隐私、安全可控的自定义通知推送工具 # 项目描述
 
 additionalProperties:
-  key: Bark # 应用创建文件夹
-  name: Bark # 应用名称
+  key: bark # 应用创建文件夹
+  name: bark # 应用名称
   tags:
     - Tool # 应用标签
   shortDescZh: 一款注重隐私、安全可控的自定义通知推送工具 # 中文描述
