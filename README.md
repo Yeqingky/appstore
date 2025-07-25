@@ -1,18 +1,53 @@
-# 1Panel App Store
+## 关于
 
-The official repository for the [1Panel](https://github.com/1Panel-dev/1Panel) App Store, containing all applications available for installation via the [1Panel](https://github.com/1Panel-dev/1Panel) App Store.
+本仓库 Fork 至[1Panel-dev/appstore](https://github.com/1Panel-dev/appstore) 为避免重复 去除了官方仓库的应用
 
-### 1Panel App Store Listing Criteria:
+### 2.1 国内网络
 
- - Well-known and active open-source projects
- - Significant installation base
- - Official Docker images provided
- - Other approved projects
+> GitHub 加速方式
+>
+> > - https://github.yeqing.net
 
-## Issue Reporting
+#### 使用 git 命令获取应用
 
-If you encounter any problems during use or have additional feedback, please submit a GitHub Issue to the [main 1Panel repository](https://github.com/1Panel-dev/1Panel/issues).
+`1Panel`计划任务类型`Shell 脚本`的计划任务框里，添加并执行以下命令，或者终端运行以下命令，
 
-## Creating Local Applications
+```shell
+git clone -b localApps https://github.yeqing.net/https://github.com/Yeqingky/appstore /opt/1panel/resource/apps/local/appstore-localApps
 
-[How to submit an application you want](https://github.com/1Panel-dev/appstore/wiki/%E5%A6%82%E4%BD%95%E6%8F%90%E4%BA%A4%E8%87%AA%E5%B7%B1%E6%83%B3%E8%A6%81%E7%9A%84%E5%BA%94%E7%94%A8)
+cp -rf /opt/1panel/resource/apps/local/appstore-localApps/apps/* /opt/1panel/resource/apps/local/
+
+rm -rf /opt/1panel/resource/apps/local/appstore-localApps
+```
+
+然后应用商店刷新本地应用即可。
+
+### 2.2 国际互联网络
+
+#### 使用 git 命令获取应用
+
+`1Panel`计划任务类型`Shell 脚本`的计划任务框里，添加并执行以下命令，或者终端运行以下命令，
+
+```shell
+git clone -b localApps https://github.com/Yeqingky/appstore /opt/1panel/resource/apps/local/appstore-localApps
+
+cp -rf /opt/1panel/resource/apps/local/appstore-localApps/apps/* /opt/1panel/resource/apps/local/
+
+rm -rf /opt/1panel/resource/apps/local/appstore-localApps
+```
+
+然后应用商店刷新本地应用即可。
+
+## 应用
+
+- tgDrive
+
+  tgDrive 是一款使用 Java 开发的基于 Telegram Bot 的网盘应用
+  
+  https://github.com/SkyDependence/tgDrive
+
+- AllinSSL
+
+  AllinSSL 是一个集证书申请、管理、部署和监控于一体的SSL证书全生命周期管理工具
+  
+  https://github.com/allinssl/allinssl
