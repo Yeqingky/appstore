@@ -2,7 +2,7 @@
 
 本仓库 Fork 至[1Panel-dev/appstore](https://github.com/1Panel-dev/appstore) 为避免重复 去除了官方仓库的应用
 
-### 2.1 国内网络
+### 国内网络
 
 > GitHub 加速方式
 >
@@ -26,7 +26,7 @@ rm -rf /opt/1panel/resource/apps/local/localApps.zip
 
 然后应用商店刷新本地应用即可。
 
-### 2.2 国际互联网络
+### 国际互联网络
 
 #### 使用压缩包方式获取应用
 
