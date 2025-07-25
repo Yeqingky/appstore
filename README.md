@@ -8,32 +8,40 @@
 >
 > > - https://github.yeqing.net
 
-#### 使用 git 命令获取应用
+#### 使用压缩包方式获取应用
 
 `1Panel`计划任务类型`Shell 脚本`的计划任务框里，添加并执行以下命令，或者终端运行以下命令，
 
 ```shell
-git clone -b dev https://github.yeqing.net/https://github.com/Yeqingky/appstore /opt/1panel/resource/apps/local/appstore-localApps
+wget -P /opt/1panel/resource/apps/local hhttps://github.yeqing.net/https://github.com/Yeqingky/appstore/archive/refs/heads/dev.zip
+
+unzip -o -d /opt/1panel/resource/apps/local/ /opt/1panel/resource/apps/local/localApps.zip
 
 cp -rf /opt/1panel/resource/apps/local/appstore-localApps/apps/* /opt/1panel/resource/apps/local/
 
 rm -rf /opt/1panel/resource/apps/local/appstore-localApps
+
+rm -rf /opt/1panel/resource/apps/local/localApps.zip
 ```
 
 然后应用商店刷新本地应用即可。
 
 ### 2.2 国际互联网络
 
-#### 使用 git 命令获取应用
+#### 使用压缩包方式获取应用
 
 `1Panel`计划任务类型`Shell 脚本`的计划任务框里，添加并执行以下命令，或者终端运行以下命令，
 
 ```shell
-git clone -b dev https://github.com/Yeqingky/appstore /opt/1panel/resource/apps/local/appstore-localApps
+wget -P /opt/1panel/resource/apps/local https://github.com/Yeqingky/appstore/archive/refs/heads/dev.zip
+
+unzip -o -d /opt/1panel/resource/apps/local/ /opt/1panel/resource/apps/local/localApps.zip
 
 cp -rf /opt/1panel/resource/apps/local/appstore-localApps/apps/* /opt/1panel/resource/apps/local/
 
 rm -rf /opt/1panel/resource/apps/local/appstore-localApps
+
+rm -rf /opt/1panel/resource/apps/local/localApps.zip
 ```
 
 然后应用商店刷新本地应用即可。
