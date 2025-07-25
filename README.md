@@ -15,13 +15,13 @@
 ```shell
 wget -P /opt/1panel/resource/apps/local hhttps://github.yeqing.net/https://github.com/Yeqingky/appstore/archive/refs/heads/dev.zip
 
-unzip -o -d /opt/1panel/resource/apps/local/ /opt/1panel/resource/apps/local/localApps.zip
+unzip -o -d /opt/1panel/resource/apps/local/ /opt/1panel/resource/apps/local/dev.zip
 
-cp -rf /opt/1panel/resource/apps/local/appstore-localApps/apps/* /opt/1panel/resource/apps/local/
+cp -rf /opt/1panel/resource/apps/local/appstore-dev/apps/* /opt/1panel/resource/apps/local/
 
-rm -rf /opt/1panel/resource/apps/local/appstore-localApps
+rm -rf /opt/1panel/resource/apps/local/appstore-dev
 
-rm -rf /opt/1panel/resource/apps/local/localApps.zip
+rm -rf /opt/1panel/resource/apps/local/dev.zip
 ```
 
 然后应用商店刷新本地应用即可。
@@ -35,13 +35,13 @@ rm -rf /opt/1panel/resource/apps/local/localApps.zip
 ```shell
 wget -P /opt/1panel/resource/apps/local https://github.com/Yeqingky/appstore/archive/refs/heads/dev.zip
 
-unzip -o -d /opt/1panel/resource/apps/local/ /opt/1panel/resource/apps/local/localApps.zip
+unzip -o -d /opt/1panel/resource/apps/local/ /opt/1panel/resource/apps/local/dev.zip
 
-cp -rf /opt/1panel/resource/apps/local/appstore-localApps/apps/* /opt/1panel/resource/apps/local/
+cp -rf /opt/1panel/resource/apps/local/appstore-dev/apps/* /opt/1panel/resource/apps/local/
 
-rm -rf /opt/1panel/resource/apps/local/appstore-localApps
+rm -rf /opt/1panel/resource/apps/local/appstore-dev
 
-rm -rf /opt/1panel/resource/apps/local/localApps.zip
+rm -rf /opt/1panel/resource/apps/local/dev.zip
 ```
 
 然后应用商店刷新本地应用即可。
