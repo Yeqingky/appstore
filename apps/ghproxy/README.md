@@ -59,36 +59,6 @@ docker pull gh.example.com/docker.io/adguard/adguardhome
 docker pull gh.example.com/ghcr.io/openfaas/queue-worker 
 ```
 
-## 部署说明
-
-可参考文章: https://blog.wjqserver.com/post/ghproxy-deploy-with-smart-git/
-
-### Docker部署
-
-- Docker-cli
-
-```
-docker run -p 7210:8080 -v ./ghproxy/log/run:/data/ghproxy/log -v ./ghproxy/log/caddy:/data/caddy/log -v ./ghproxy/config:/data/ghproxy/config  --restart always wjqserver/ghproxy
-```
-
-- Docker-Compose (建议使用)
-
-    参看[docker-compose.yml](https://github.com/WJQSERVER-STUDIO/ghproxy/blob/main/docker/compose/docker-compose.yml)
-
-### 二进制文件部署(不推荐)
-
-一键部署脚本:
-
-```bash
-wget -O install.sh https://raw.githubusercontent.com/WJQSERVER-STUDIO/ghproxy/main/deploy/install.sh && chmod +x install.sh &&./install.sh
-```
-
-Dev一键部署脚本:
-
-```bash
-wget -O install-dev.sh https://raw.githubusercontent.com/WJQSERVER-STUDIO/ghproxy/dev/deploy/install-dev.sh && chmod +x install-dev.sh && ./install-dev.sh
-```
-
 ## 配置说明
 
 参看[项目文档](https://github.com/WJQSERVER-STUDIO/ghproxy/blob/main/docs/config.md)
@@ -112,15 +82,3 @@ v3.5.2开始, 本项目使用 [WJQserver Studio License 2.1](https://wjqserver-s
 在v2.3.0之前, 本项目使用WJQserver Studio License 1.2
 
 在v1.0.0版本之前,本项目继承于[WJQSERVER-STUDIO/ghproxy-go](https://github.com/WJQSERVER-STUDIO/ghproxy-go)的APACHE2.0 LICENSE VERSION
-
-## 赞助
-
-如果您觉得本项目对您有帮助,欢迎赞助支持,您的赞助将用于Demo服务器开支及开发者时间成本支出,感谢您的支持!
-
-USDT(TRC20): `TNfSYG6F2vkiibd6J6mhhHNWDgWgNdF5hN`
-
-### 捐赠列表
-
-| 赞助人    |金额|
-|--------|------|
-| starry | 8 USDT (TRC20)   |
