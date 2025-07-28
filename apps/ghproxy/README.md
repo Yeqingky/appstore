@@ -1,97 +1,126 @@
-## Bark
-Bark 是一款推送通知工具 App。它免费、简单且安全，依赖 APNs 不会消耗设备的电量。<br/>
-Bark 支持 iOS 通知的多项高级特性，包括推送分组、定制推送图标、铃声，发送时效性通知、重要警告等等。<br/>
-此外，Bark 允许用户自行部署服务端，还有推送加密，APP由开源代码自动构建与发布等措施保证隐私安全。<br/>
+# GHProxy
 
-## 下载
-<a target='_blank' href='https://apps.apple.com/app/bark-custom-notifications/id1403753865'>
-<img src='https://zy.emocc.cn/d/%E5%9D%9A%E6%9E%9C%E4%BA%91%E7%9B%98/image/f085bfd114c79fd09f1722c817eb8400.png' width='144' height='49' />
-</a>
+![GitHub Release](https://img.shields.io/github/v/release/WJQSERVER-STUDIO/ghproxy?display_name=tag&style=flat)
+![pull](https://img.shields.io/docker/pulls/wjqserver/ghproxy.svg)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/wjqserver/ghproxy/latest)
+![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/WJQSERVER-STUDIO/ghproxy)
+[![Go Report Card](https://goreportcard.com/badge/github.com/WJQSERVER-STUDIO/ghproxy)](https://goreportcard.com/report/github.com/WJQSERVER-STUDIO/ghproxy)
 
-## 使用文档
-[https://bark.day.app](https://bark.day.app)
+一个基于Go的高性能Github资源代理程序, 同时支持Docker镜像代理与脚本嵌套加速等多种功能
 
-## 问题反馈
-[Bark反馈群](https://t.me/joinchat/OsCbLzovUAE0YjY1)
+## 项目说明
 
-## 发送推送
-1. 打开APP，复制测试URL 
+### 项目特点
 
-<img src="https://zy.emocc.cn/d/%E5%9D%9A%E6%9E%9C%E4%BA%91%E7%9B%98/image/6772cafff49922c11a9441978e1b0964.png" width=365 />
+- ⚡ **基于 Go 语言实现，跨平台的同时提供高并发性能**
+- 🌐 **使用自有[Touka框架](https://github.com/infinite-iroha/touka)作为 HTTP服务端框架**
+- 📡 **使用 [Touka-HTTPC](https://github.com/WJQSERVER-STUDIO/httpc) 作为 HTTP 客户端**
+- 📥 **支持 Git clone、raw、releases 等文件拉取**
+- 🐳 **支持反代Docker, GHCR等镜像仓库**
+- 🎨 **支持多个前端主题**
+- 🚫 **支持自定义黑名单/白名单**
+- 🗄️ **支持 Git Clone 缓存（配合 [Smart-Git](https://github.com/WJQSERVER-STUDIO/smart-git)）**
+- 🐳 **支持自托管与Docker容器化部署**
+- ⚡ **支持速率限制**
+- ⚡ **支持带宽速率限制**
+- 🔒 **支持用户鉴权**
+- 🐚 **支持 shell 脚本多层嵌套加速**
 
-2. 修改内容，请求这个URL
-```
-可以发 get 或者 post 请求 ，请求成功会立即收到推送 
+### 项目相关
 
-URL 组成: 第一个部分是 key , 之后有三个匹配 
-/:key/:body 
-/:key/:title/:body 
-/:key/:title/:subtitle/:body 
+[DEMO](https://ghproxy.1888866.xyz)
 
-title 推送标题 比 body 字号粗一点 
-subtitle 推送副标题
-body 推送内容 换行请使用换行符 '\n'
-post 请求 参数名也是上面这些
+[TG讨论群组](https://t.me/ghproxy_go)
+
+[GHProxy项目文档](https://wjqserver-docs.pages.dev/docs/ghproxy/) 感谢 [@redbunnys](https://github.com/redbunnys)的维护
+
+[相关文章](https://blog.wjqserver.com/categories/my-program/)
+
+代理相关推广: [Thordata](https://www.thordata.com/?ls=github&lk=WJQserver)，市面上最具性价比的代理服务商，便宜好用，来自全球195个国家城市的6000万IP，轮换住宅/原生ISP/无限量仅从$0.65/GB 起，新用户$1=5GB .联系客户可获得免费测试.
+
+### 使用示例
+
+```bash 
+# 下载文件
+https://ghproxy.1888866.xyz/raw.githubusercontent.com/WJQSERVER-STUDIO/tools-stable/main/tools-stable-ghproxy.sh
+https://ghproxy.1888866.xyz/https://raw.githubusercontent.com/WJQSERVER-STUDIO/tools-stable/main/tools-stable-ghproxy.sh
+
+# 克隆仓库
+git clone https://ghproxy.1888866.xyz/github.com/WJQSERVER-STUDIO/ghproxy.git
+git clone https://ghproxy.1888866.xyz/https://github.com/WJQSERVER-STUDIO/ghproxy.git
+
+# Docker(OCI) 代理
+docker pull gh.example.com/wjqserver/ghproxy
+docker pull gh.example.com/adguard/adguardhome
+
+docker pull gh.example.com/docker.io/wjqserver/ghproxy
+docker pull gh.example.com/docker.io/adguard/adguardhome
+
+docker pull gh.example.com/ghcr.io/openfaas/queue-worker 
 ```
 
-## 功能参数
+## 部署说明
 
-* url
-```
-// 点击推送将跳转到url的地址（发送时，URL参数需要编码）
-https://api.day.app/yourkey/百度网址?url=https://www.baidu.com 
-```
-* group
-```
-// 指定推送消息分组，可在历史记录中按分组查看推送。
-https://api.day.app/yourkey/需要分组的推送?group=groupName
-```
-* icon (仅 iOS15 或以上支持）
-```
-// 指定推送消息图标
-https://api.day.app/yourkey/需要自定义图标的推送?icon=http://day.app/assets/images/avatar.jpg
-```
-* sound
-```
-// 指定推送消息的铃声
-https://api.day.app/yourkey/sound?sound=alarm
-```
-* call
-```
-// 重复播放铃声30s
-https://api.day.app/yourkey/call?call=1
-```
-* ciphertext
-```
-// 推送加密的密文
-https://api.day.app/yourkey/ciphertext?ciphertext=
-```
-* 时效性通知
-```
-// 设置时效性通知
-https://api.day.app/yourkey/时效性通知?level=timeSensitive
+可参考文章: https://blog.wjqserver.com/post/ghproxy-deploy-with-smart-git/
 
-// 可选参数值
-// active：不设置时的默认值，系统会立即亮屏显示通知。
-// timeSensitive：时效性通知，可在专注状态下显示通知。
-// passive：仅将通知添加到通知列表，不会亮屏提醒
-```
-* 重要警告
-```
-// 设置时效性通知
-https://api.day.app/yourkey/时效性通知?level=critical
+### Docker部署
 
-重要警告会忽略静音和勿扰模式，始终播放通知声音并在屏幕上显示。
+- Docker-cli
+
 ```
-## 其他
-- [在线定时发送](https://api.ihint.me/bark.html)
-- [Windows推送客户端](https://github.com/HsuDan/BarkHelper)
-- [跨平台的命令行应用](https://github.com/JasonkayZK/bark-cli)
-- [Bark GitHub Actions](https://github.com/harryzcy/action-bark)
-- [Quicker 动作](https://getquicker.net/Sharedaction?code=e927d844-d212-4428-758d-08d69de12a3b)
-- [Bark for Wox](https://github.com/Zeroto521/Wox.Plugin.Bark)
-- [bark-jssdk](https://github.com/afeiship/bark-jssdk)
-- [java-bark-server](https://gitee.com/hotlcc/java-bark-server)
-- [bark-java-sdk](https://github.com/MoshiCoCo/bark-java-sdk)
-- [Python for Bark](https://github.com/funny-cat-happy/barknotificator)
-- [uTools for Bark](https://u.tools/plugins/detail/PushOne/)
+docker run -p 7210:8080 -v ./ghproxy/log/run:/data/ghproxy/log -v ./ghproxy/log/caddy:/data/caddy/log -v ./ghproxy/config:/data/ghproxy/config  --restart always wjqserver/ghproxy
+```
+
+- Docker-Compose (建议使用)
+
+    参看[docker-compose.yml](https://github.com/WJQSERVER-STUDIO/ghproxy/blob/main/docker/compose/docker-compose.yml)
+
+### 二进制文件部署(不推荐)
+
+一键部署脚本:
+
+```bash
+wget -O install.sh https://raw.githubusercontent.com/WJQSERVER-STUDIO/ghproxy/main/deploy/install.sh && chmod +x install.sh &&./install.sh
+```
+
+Dev一键部署脚本:
+
+```bash
+wget -O install-dev.sh https://raw.githubusercontent.com/WJQSERVER-STUDIO/ghproxy/dev/deploy/install-dev.sh && chmod +x install-dev.sh && ./install-dev.sh
+```
+
+## 配置说明
+
+参看[项目文档](https://github.com/WJQSERVER-STUDIO/ghproxy/blob/main/docs/config.md)
+
+### 前端页面
+
+参看[GHProxy-Frontend](https://github.com/WJQSERVER-STUDIO/GHProxy-Frontend)
+
+## 文档
+
+*   [GHProxy项目文档](https://wjqserver-docs.pages.dev/docs/ghproxy/) 感谢 [@redbunnys](https://github.com/redbunnys)的维护
+
+*   [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/WJQSERVER-STUDIO/ghproxy) 可供参考, AI生成存在幻觉, 不完全可靠, 请注意辨别
+
+## LICENSE
+
+v3.5.2开始, 本项目使用 [WJQserver Studio License 2.1](https://wjqserver-studio.github.io/LICENSE/LICENSE.html) 和 [Mozilla Public License Version 2.0](https://mozilla.org/MPL/2.0/) 双重许可, 您可从中选择一个使用
+
+前端位于单独仓库中, 且各个主题均存在各自的许可证, 本项目许可证并不包括前端
+
+在v2.3.0之前, 本项目使用WJQserver Studio License 1.2
+
+在v1.0.0版本之前,本项目继承于[WJQSERVER-STUDIO/ghproxy-go](https://github.com/WJQSERVER-STUDIO/ghproxy-go)的APACHE2.0 LICENSE VERSION
+
+## 赞助
+
+如果您觉得本项目对您有帮助,欢迎赞助支持,您的赞助将用于Demo服务器开支及开发者时间成本支出,感谢您的支持!
+
+USDT(TRC20): `TNfSYG6F2vkiibd6J6mhhHNWDgWgNdF5hN`
+
+### 捐赠列表
+
+| 赞助人    |金额|
+|--------|------|
+| starry | 8 USDT (TRC20)   |
