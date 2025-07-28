@@ -1,11 +1,5 @@
 # GHProxy
 
-![GitHub Release](https://img.shields.io/github/v/release/WJQSERVER-STUDIO/ghproxy?display_name=tag&style=flat)
-![pull](https://img.shields.io/docker/pulls/wjqserver/ghproxy.svg)
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/wjqserver/ghproxy/latest)
-![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/WJQSERVER-STUDIO/ghproxy)
-[![Go Report Card](https://goreportcard.com/badge/github.com/WJQSERVER-STUDIO/ghproxy)](https://goreportcard.com/report/github.com/WJQSERVER-STUDIO/ghproxy)
-
 一个基于Go的高性能Github资源代理程序, 同时支持Docker镜像代理与脚本嵌套加速等多种功能
 
 ## 项目说明
@@ -25,18 +19,6 @@
 - ⚡ **支持带宽速率限制**
 - 🔒 **支持用户鉴权**
 - 🐚 **支持 shell 脚本多层嵌套加速**
-
-### 项目相关
-
-[DEMO](https://ghproxy.1888866.xyz)
-
-[TG讨论群组](https://t.me/ghproxy_go)
-
-[GHProxy项目文档](https://wjqserver-docs.pages.dev/docs/ghproxy/) 感谢 [@redbunnys](https://github.com/redbunnys)的维护
-
-[相关文章](https://blog.wjqserver.com/categories/my-program/)
-
-代理相关推广: [Thordata](https://www.thordata.com/?ls=github&lk=WJQserver)，市面上最具性价比的代理服务商，便宜好用，来自全球195个国家城市的6000万IP，轮换住宅/原生ISP/无限量仅从$0.65/GB 起，新用户$1=5GB .联系客户可获得免费测试.
 
 ### 使用示例
 
