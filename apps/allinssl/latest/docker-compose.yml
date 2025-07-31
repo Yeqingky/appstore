@@ -3,7 +3,7 @@ services:
     image: allinssl/allinssl:latest             # 使用的镜像，latest 表示始终使用最新版本
     container_name: ${CONTAINER_NAME}           # 容器名称，从环境变量 CONTAINER_NAME 获取
     ports:
-      - "${PANEL_APP_PORT_HTTP}:8085"           # 映射主机端口到容器的 8085 端口（Web 面板）
+      - "${PANEL_APP_PORT_HTTP}:8888"           # 映射主机端口到容器
     volumes:
       - ${DATA_PATH}:/www/allinssl/data         # 映射本地数据目录到容器内，用于持久化数据库数据
     restart: always                             # 容器异常退出时自动重启
