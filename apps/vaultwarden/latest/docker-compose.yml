@@ -1,0 +1,21 @@
+services:
+  tgdrive:
+    image: vaultwarden/server:latest            # 使用的镜像，latest 表示始终使用最新版本
+    container_name: ${CONTAINER_NAME}           # 容器名称，从环境变量 CONTAINER_NAME 获取
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80"             # 映射主机端口到容器的 8085 端口（Web 面板）
+    volumes:
+      - ${LOG_PATH}:/data                       # 数据
+    restart: always                             # 容器异常退出时自动重启
+    networks:
+      - 1panel-network                          # 使用名为 1panel-network 的 Docker 网络
+
+    environment:
+      - DOMAIN=${DOMAIN}                        # 设置 Vaultwarden 的访问域名
+      - PUID=0                                  # 设置容器进程的用户 ID 为 0（root 用户）
+      - PGID=0                                  # 设置容器进程的用户组 ID 为 0（root 用户组）
+      - UMASK=022                               # 设置文件权限掩码，新建文件默认权限为 755
+
+networks:
+  1panel-network:
+    external: true                              # 使用已存在的外部网络，方便与其他服务通信
