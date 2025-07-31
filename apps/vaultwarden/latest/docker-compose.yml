@@ -5,7 +5,7 @@ services:
     ports:
       - "${PANEL_APP_PORT_HTTP}:80"             # 映射主机端口到容器的 8085 端口（Web 面板）
     volumes:
-      - ${LOG_PATH}:/data                       # 数据
+      - ${DATA_PATH}:/data                       # 数据
     restart: always                             # 容器异常退出时自动重启
     networks:
       - 1panel-network                          # 使用名为 1panel-network 的 Docker 网络
