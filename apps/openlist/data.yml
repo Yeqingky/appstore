@@ -1,0 +1,20 @@
+name: openlist # 应用名称
+tags:
+  - 工具 # 应用标签
+title: 一个支持多种存储的文件列表程序 # 项目标题
+description: 一个支持多种存储的文件列表程序 # 项目描述
+
+additionalProperties:
+  key: openlist # 应用创建文件夹
+  name: openlist # 应用名称
+  tags:
+    - Tool # 应用标签
+  shortDescZh: 一个支持多种存储的文件列表程序 # 中文描述
+  shortDescEn: A file list program that supports multiple storage # 英文描述
+  type: tool # 应用类型
+  crossVersionUpdate: true # 是否可以跨大版本升级
+  limit: 0 # 限制安装次数 0 代表无限制
+  recommend: 0 # 推荐级别
+  website: https://doc.openlist.team/ # 官方网站
+  github: https://github.com/OpenListTeam/OpenList # GitHub 仓库
+  document: https://doc.openlist.team/ # 文档地址
