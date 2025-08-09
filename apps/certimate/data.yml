@@ -1,0 +1,20 @@
+name: certimate # 应用名称
+tags:
+  - 工具 # 应用标签
+title: 开源的 SSL 证书管理工具，可以帮助你自动申请、部署 SSL 证书，并在证书即将过期时自动续期 # 项目标题
+description: 开源的 SSL 证书管理工具，可以帮助你自动申请、部署 SSL 证书，并在证书即将过期时自动续期 # 项目描述
+
+additionalProperties:
+  key: certimate # 应用创建文件夹
+  name: certimate # 应用名称
+  tags:
+    - Tool # 应用标签
+  shortDescZh: 开源的 SSL 证书管理工具，可以帮助你自动申请、部署 SSL 证书，并在证书即将过期时自动续期 # 中文描述
+  shortDescEn: An open-source SSL certificate management tool that helps you automatically apply for and deploy SSL certificates, as well as automatically renew them when they are about to expire. # 英文描述
+  type: tool # 应用类型
+  crossVersionUpdate: true # 是否可以跨大版本升级
+  limit: 0 # 限制安装次数 0 代表无限制
+  recommend: 0 # 推荐级别
+  website: https://docs.certimate.me/ # 官方网站
+  github: https://github.com/certimate-go/certimate # GitHub 仓库
+  document: https://docs.certimate.me/ # 文档地址
